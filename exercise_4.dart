@@ -1,42 +1,39 @@
+// Import the library for using stdin (not needed in this version)
+import 'dart:io'; // This line can be commented out if not using stdin
 
 // Enumeration for the days of the week
 enum DiaSemana {
   Lunes,
   Martes,
-  Miércoles,
+  Miercoles, // Without accent
   Jueves,
   Viernes,
-  Sábado,
+  Sabado, // Without accent
   Domingo,
 }
 
 // Extension on int to check if the number is even
 extension ParExtension on int {
   bool esPar() {
-    return this % 2 == 0;
+    return this % 2 == 0; // Return true if the number is even
   }
 }
 
 void main() {
   // Example usage of DiaSemana
-  print('Días de la semana:');
+  print('Days of the week:');
   for (var dia in DiaSemana.values) {
-    print(dia);
+    print(dia); // Print each day of the week
   }
 
-  // Input from the user
-  print('Ingrese un número:');
-  int? numero = int.tryParse(stdin.readLineSync()!);
+  // Hardcoded user input instead of stdin
+  int numero = 4; // Change this number for testing
+  print('Entered number: $numero');
 
-  if (numero != null) {
-    // Check if the number is even using the extension
-    if (numero.esPar()) {
-      print('$numero es par.');
-    } else {
-      print('$numero es impar.');
-    }
+  // Check if the number is even using the extension
+  if (numero.esPar()) {
+    print('$numero is even.'); // Print if the number is even
   } else {
-    print('Por favor, ingrese un número válido.');
+    print('$numero is odd.'); // Print if the number is odd
   }
 }
-
